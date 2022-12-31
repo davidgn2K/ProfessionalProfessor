@@ -102,14 +102,14 @@ try{
             echo "<td>".$registro['nombre']."</td>";
             echo "<td>";
                 echo "<ul>";
-                    foreach ($db->query("SELECT idProfesor, $tableUniversidad.nombre, $tableFacultad.nombre,
+                    foreach ($db->query("SELECT idProfesor, $tableUniversidad.nombre, $tableFacultad.nombre
                                 FROM $tableFacultadProfesor 
-                                INNER JOIN $tableFacultad on idFacultad = $tableFacultad.id
-                                INNER JOIN $tableUniversidad on $tableFacultad.idUniversidad = $tableUniversidad.id
+                                INNER JOIN $tableFacultad ON idFacultad = $tableFacultad.id
+                                INNER JOIN $tableUniversidad ON $tableFacultad.idUniversidad = $tableUniversidad.id
                                 WHERE idProfesor=$temp") 
-                                as $registro){
+                                as $registro2){
 
-                    echo "<li>".$registro['facultad.nombre']."</li>"; 
+                    echo "<li>".$registro2['facultad.nombre']."</li>"; 
 
                     }
                 echo "</ul>";
@@ -117,14 +117,14 @@ try{
 
             echo "<td>";
                 echo "<ul>";
-                    foreach ($db->query("SELECT idProfesor, DISTINCT($tableUniversidad.nombre), $tableFacultad.nombre,
+                    foreach ($db->query("SELECT idProfesor, DISTINCT($tableUniversidad.nombre), $tableFacultad.nombre
                                 FROM $tableFacultadProfesor 
                                 INNER JOIN $tableFacultad on idFacultad = $tableFacultad.id
                                 INNER JOIN $tableUniversidad on $tableFacultad.idUniversidad = $tableUniversidad.id
                                 WHERE idProfesor=$temp") 
-                                as $registro){
+                                as $registro2){
 
-                    echo "<li>".$registro['universidad.nombre']."</li>"; 
+                    echo "<li>".$registro2['universidad.nombre']."</li>"; 
 
                     }
                 echo "</ul>";
