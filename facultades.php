@@ -34,9 +34,9 @@ try{
      <!-- Font Awesome Icons -->
      <script src="https://kit.fontawesome.com/95d6309765.js" crossorigin="anonymous"></script>
 
-     <!-- Favicon -->
-     <link rel="icon" href="/favicon.ico" type="image/x-icon">
-     <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+    <!-- Favicon -->
+    <link rel="icon" href="/favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
 
     <title>Professional Professor</title>
   </head>
@@ -44,25 +44,25 @@ try{
 
       <!-- Navbar start -->
       <nav class="navbar navbar-expand-md navbar-light border-bottom border-dark" style="background-color: #FFFFFF;">
-        <a class="col-md-1 navbar-brand" href="./index.html">
+        <a class="col-1 navbar-brand" href="./index.php">
           <img src="./images/logo_no_bg_resized.png">
         </a>
         
-        <ul class="col-md-9 justify-content-center navbar-nav">
+        <ul class="col-9 justify-content-center navbar-nav">
             <li class="mr-4 nav-item">
               <a class="nav-link" href="./index.php">Inicio</a>
             </li>
-            <li class="mr-4 nav-item active">
-              <a class="nav-link" href="#">Universidades<span class="sr-only">(current)</span></a>
-            </li>
             <li class="mr-4 nav-item">
-              <a class="nav-link" href="./facultades.php">Facultades</a>
+              <a class="nav-link" href="./universidades.php">Universidades</a>
+            </li>
+            <li class="mr-4 nav-item active">
+              <a class="nav-link" href="#">Facultades<span class="sr-only">(current)</span></a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="./profesores.php">Profesores</a>
             </li>
         </ul>
-        <div class="col-md-2">
+        <div class="col-2">
           <button class="button-23" role="button">Iniciar Sesión</button>
         </div>
       </nav>
@@ -73,7 +73,7 @@ try{
           <div class="col-5">
           </div>
           <div class="col-3 mt-4">
-            <p>Universidades</p>
+            <p>Facultades</p>
           </div>
           <div class="col-4">
           </div>
@@ -85,26 +85,20 @@ try{
         <thead class="thead-dark">
           <tr>
             <th scope="col">#</th>
+            <th scope="col">Facultad&nbsp;&nbsp;&nbsp;<i class="fas fa-graduation-cap"></i></th>
             <th scope="col">Universidad&nbsp;&nbsp;&nbsp;<i class="fas fa-university"></i></th>
             <th scope="col">Descripción&nbsp;&nbsp;&nbsp;<i class="fas fa-align-justify"></i></th>
-            <th scope="col">No. Facultades&nbsp;&nbsp;&nbsp;<i class="fas fa-graduation-cap"></i></th>
             <th scope="col">No. Profesores&nbsp;&nbsp;&nbsp;<i class="fas fa-user-tie"></i></th>
           </tr>
         </thead>
         <tbody>
-          <?php 
-            foreach ($db->query("SELECT * FROM $tableUniversidad") as $registro) {
-          echo "<tr>";
-            echo "<th scope='row'>".$registro['id']."</th>";
-            echo "<td>".$registro['nombre']."</td>";
-            echo "<td>".$registro['descripcion']."</td>";
-            foreach ($db->query("SELECT COUNT(id) FROM $tableFacultad WHERE idUniversidad=1") as $registro){
-              echo "<td>".$registro['COUNT(id)']."</td>"; }
-            foreach ($db->query("SELECT COUNT(id) FROM $tableFacultadProfesor INNER JOIN
-              $tableFacultad ON $tableFacultadProfesor.idFacultad = $tableFacultad.id WHERE idUniversidad=1") as $registro){
-            echo "<td>".$registro['COUNT(id)']."</td>"; }
-            echo "</tr>";
-	        } ?>
+          <tr>
+            <th scope="row">1</th>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
         </tbody>
       </table>
 
