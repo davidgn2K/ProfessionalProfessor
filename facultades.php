@@ -101,8 +101,11 @@ try{
                 foreach ($db->query("SELECT $tableUniversidad.nombre FROM $tableFacultad
                         INNER JOIN $tableUniversidad ON $tableFacultad.idUniversidad = $tableUniversidad.id 
                         WHERE $tableFacultad.id=$temp") as $registro){
-                    echo "<td>".$registro['universidad.nombre']."</td>"; }
+                    echo "<td>".$registro."</td>"; 
+                    }
+
                 echo "<td>".$registro['descripcion']."</td>";
+
                 foreach ($db->query("SELECT COUNT(idFacultad) FROM $tableFacultadProfesor  
                         WHERE idFacultad=$temp") as $registro){
                         echo "<td>".$registro['COUNT(idFacultad)']."</td>"; 
