@@ -19,6 +19,10 @@
     <!-- Font Awesome Icons -->
     <script src="https://kit.fontawesome.com/95d6309765.js" crossorigin="anonymous"></script>
 
+    <!-- Favicon -->
+    <link rel="icon" href="/favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+
     <title>Professional Professor</title>
   </head>
   <body>
@@ -49,6 +53,77 @@
       </nav>
       <!-- Navbar end -->
 
+      <div class="container-fluid justify-content-center contenido">
+        <div class="row">
+          <div class="col-5">
+          </div>
+          <div class="col-3 mt-4">
+            <p>Añadir un profesor</p>
+          </div>
+          <div class="col-4">
+          </div>
+        </div>  
+      </div> 
+
+      <form class="mx-3 my-5">
+        <div class="form-row">
+
+          <div class="col-md-3 mb-3">
+            <label class="mr-sm-2" for="inlineFormCustomSelect01">Grado</label>
+            <select class="custom-select mr-sm-2" id="inlineFormCustomSelect01">
+              <option value="1" selected>Licenciado</option>
+              <option value="2">Maestro</option>
+              <option value="3">Doctor</option>
+              <option value="4">M.I.</option>
+            </select>
+          </div>
+
+          <div class="col-md-3 mb-3">
+            <label for="validationDefault01">Nombre</label>
+            <input type="text" class="form-control" id="validationDefault01" placeholder="Alberto" value="" required>
+          </div>
+
+          <div class="col-md-3 mb-3">
+            <label for="validationDefault02">Apellido Paterno</label>
+            <input type="text" class="form-control" id="validationDefault02" placeholder="Arenas" value="" required>
+          </div>
+          <div class="col-md-3 mb-3">
+            <label for="validationDefault03">Apellido Materno</label>
+            <input type="text" class="form-control" id="validationDefault03" placeholder="Islas" value="">
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="col-md-3 mb-3">
+            <label for="validationDefault04">Cédula Profesional</label>
+            <input type="text" class="form-control" id="validationDefault04" placeholder="23456789" required>
+          </div>
+          <div class="col-md-5 mb-3">
+            <label class="mr-sm-2" for="inlineFormCustomSelect02">Universidad</label>
+            <select class="custom-select mr-sm-2" id="inlineFormCustomSelect02">
+              <option value="1" selected>Universidad Nacional Autónoma de México</option>
+              <option value="2">Instituto Tecnológico de Estudios Superiores de Monterrey</option>
+              <option value="3">Instituto Tecnológico Autónomo de México</option>
+            </select>
+          </div>
+          <div class="col-md-4 mb-3">
+            <label class="mr-sm-2" for="inlineFormCustomSelect03">Facultad</label>
+            <select class="custom-select mr-sm-2" id="inlineFormCustomSelect03">
+              <option value="1" selected>Op1</option>
+              <option value="2">Op2</option>
+              <option value="3">Op3</option>
+            </select>
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="col-md-3">
+          </div>
+          <div class="col-md-6 mt-5">
+            <button class="button-27" type="submit">Confirmar&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<i class="fas fa-chevron-right"></i> </button>
+          </div>
+          <div class="col-md-3">
+          </div>
+        </div>
+      </form>
 
       <footer class="text-center text-white fixed-bottom border-top border-dark" style="background-color: #f1f1f1;">
         <!-- Grid container -->
@@ -114,8 +189,7 @@
       
         <!-- Copyright -->
         <div class="text-center text-dark p-1 border-top border-secondary" style="background-color: rgba(0, 0, 0, 0.2);">
-          © 2023 Copyright:
-          <a class="text-dark" href="https://mdbootstrap.com/">Elating Software</a>
+          © 2023 Copyright
         </div>
         <!-- Copyright -->
       </footer>
