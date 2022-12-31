@@ -98,10 +98,10 @@ try{
             echo "<tr>";
                 echo "<th scope='row'>".$registro['id']."</th>";
                 echo "<td>".$registro['nombre']."</td>";
-                foreach ($db->query("SELECT $tableUniversidad.nombre FROM $tableFacultad
+                foreach ($db->query("SELECT * FROM $tableFacultad
                         INNER JOIN $tableUniversidad ON $tableFacultad.idUniversidad = $tableUniversidad.id 
                         WHERE $tableFacultad.id=$temp") as $registro){
-                    echo "<td>".$registro."</td>"; 
+                    echo "<td>".$registro['$tableUniversidad.nombre']."</td>"; 
                     }
 
                 echo "<td>".$registro['descripcion']."</td>";
