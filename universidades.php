@@ -4,6 +4,7 @@ $password = "12345";
 $database = "professionalProfessor";
 $tableUniversidad = "universidad";
 $tableFacultad = "facultad";
+$tableFacultadProfesor = "facultad_profesor";
 try{
 	$db = new PDO("mysql:host=localhost;dbname=$database", $user, $password);
 } catch (PDOException $e) {
@@ -101,7 +102,9 @@ try{
 	   <?php } ?>
             <td><?php foreach ($db->query("SELECT COUNT(id) FROM $tableFacultad WHERE idUniversidad=1") as $registro){
 		echo $registro['COUNT(id)']; }  ?></td>
-            <td></td>
+            <td><?php foreach ($db->query("SELECT COUNT(id) FROM $tableFacultadProfesor INNER JOIN
+            $tableFacultad ON $tableFacultadProfesor.idFacultad = $tableFacultad.id WHERE idUniversidad=1") as $registro){
+		echo $registro['COUNT(id)']; }  ?></td>
           </tr>
         </tbody>
       </table>
