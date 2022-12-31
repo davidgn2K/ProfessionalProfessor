@@ -104,7 +104,7 @@ try{
                     echo "<td>".$registro['universidad.nombre']."</td>"; }
                 echo "<td>".$registro['descripcion']."</td>";
                 foreach ($db->query("SELECT COUNT(id) FROM $tableFacultadProfesor  
-                        WHERE id=$temp") as $registro){
+                        WHERE idFacultad=$temp") as $registro){
                         echo "<td>".$registro['COUNT(id)']."</td>"; 
                     }
                 echo "</tr>";
