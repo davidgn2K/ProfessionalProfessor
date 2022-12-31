@@ -100,15 +100,15 @@ try{
                 echo "<td>".$registro['nombre']."</td>";
                 foreach ($db->query("SELECT $tableUniversidad.nombre as nom FROM $tableFacultad
                         INNER JOIN $tableUniversidad ON $tableFacultad.idUniversidad = $tableUniversidad.id 
-                        WHERE $tableFacultad.id=$temp") as $registro){
-                    echo "<td>".$registro['nom']."</td>"; 
+                        WHERE $tableFacultad.id=$temp") as $registro2){
+                    echo "<td>".$registro2['nom']."</td>"; 
                     }
 
                 echo "<td>".$registro['descripcion']."</td>";
 
                 foreach ($db->query("SELECT COUNT(idFacultad) FROM $tableFacultadProfesor  
-                        WHERE idFacultad=$temp") as $registro){
-                        echo "<td>".$registro['COUNT(idFacultad)']."</td>"; 
+                        WHERE idFacultad=$temp") as $registro2){
+                        echo "<td>".$registro2['COUNT(idFacultad)']."</td>"; 
                     }
                 echo "</tr>";
 	        } ?>
