@@ -100,7 +100,7 @@ try{
                 echo "<td>".$registro['nombre']."</td>";
                 foreach ($db->query("SELECT $tableUniversidad.nombre FROM $tableFacultad
                         INNER JOIN $tableUniversidad ON $tableFacultad.idUniversidad = $tableUniversidad.id 
-                        WHERE id=$temp") as $registro){
+                        WHERE $tableFacultad.id=$temp") as $registro){
                     echo "<td>".$registro['universidad.nombre']."</td>"; }
                 echo "<td>".$registro['descripcion']."</td>";
                 foreach ($db->query("SELECT COUNT(id) FROM $tableFacultadProfesor  
