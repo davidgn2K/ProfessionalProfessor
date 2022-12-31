@@ -96,12 +96,13 @@ try{
             foreach ($db->query("SELECT * FROM $tableUniversidad") as $registro) {
           echo "<tr>";
             echo "<th scope='row'>".$registro['id']."</th>";
+            $temp = $registro['id'];
             echo "<td>".$registro['nombre']."</td>";
             echo "<td>".$registro['descripcion']."</td>";
-            foreach ($db->query("SELECT COUNT(id) FROM $tableFacultad WHERE idUniversidad=1") as $registro){
+            foreach ($db->query("SELECT COUNT(id) FROM $tableFacultad WHERE idUniversidad=$temp") as $registro){
               echo "<td>".$registro['COUNT(id)']."</td>"; }
             foreach ($db->query("SELECT COUNT(id) FROM $tableFacultadProfesor INNER JOIN
-              $tableFacultad ON $tableFacultadProfesor.idFacultad = $tableFacultad.id WHERE idUniversidad=1") as $registro){
+              $tableFacultad ON $tableFacultadProfesor.idFacultad = $tableFacultad.id WHERE idUniversidad=$temp") as $registro){
             echo "<td>".$registro['COUNT(id)']."</td>"; }
             echo "</tr>";
 	        } ?>

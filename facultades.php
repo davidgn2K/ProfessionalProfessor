@@ -92,13 +92,23 @@ try{
           </tr>
         </thead>
         <tbody>
-          <tr>
-            <th scope="row">1</th>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-          </tr>
+            <?php 
+            foreach ($db->query("SELECT * FROM $tableFacultad") as $registro) {
+            $temp = $registro['id'];
+            echo "<tr>";
+                echo "<th scope='row'>".$registro['id']."</th>";
+                echo "<td>".$registro['nombre']."</td>";
+                foreach ($db->query("SELECT $tableUniversidad.nombre FROM $tableFacultad
+                        INNER JOIN $tableUniversidad ON $tableFacultad.idUniversidad = $tableUniversidad.id 
+                        WHERE id=$temp") as $registro){
+                    echo "<td>".$registro['universidad.nombre']."</td>"; }
+                echo "<td>".$registro['descripcion']."</td>";
+                foreach ($db->query("SELECT COUNT(id) FROM $tableFacultadProfesor  
+                        WHERE id=$temp") as $registro){
+                        echo "<td>".$registro['COUNT(id)']."</td>"; 
+                    }
+                echo "</tr>";
+	        } ?>
         </tbody>
       </table>
 
