@@ -105,7 +105,7 @@ try{
                 echo "<td>".$registro['descripcion']."</td>";
                 foreach ($db->query("SELECT COUNT(idFacultad) FROM $tableFacultadProfesor  
                         WHERE idFacultad=$temp") as $registro){
-                        echo "<td>".$registro['COUNT(id)']."</td>"; 
+                        echo "<td>".$registro['COUNT(idFacultad)']."</td>"; 
                     }
                 echo "</tr>";
 	        } ?>
