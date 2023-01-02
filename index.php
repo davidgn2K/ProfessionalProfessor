@@ -4,6 +4,7 @@ $host = "localhost";
 $user = "ProfessionalProfessorAdmin";
 $password = "12345";
 $database = "professionalProfessor";
+$tablaFacultad = "facultad";
 
  // servername => localhost
         // username => root
@@ -190,7 +191,7 @@ $faculty = $_REQUEST['form_faculty'];
             <label class="mr-sm-2" for="inlineFormCustomSelect03">Facultad</label>
             <select class="custom-select mr-sm-2" id="inlineFormCustomSelect03" name="form_faculty">
               <?php
-                foreach ($db->query("SELECT id, nombre FROM facultad 
+                foreach ( $db->query ("SELECT id, nombre FROM $tablaFacultad 
                                     WHERE idUniversidad=$university") as $registro) {
                     
                   echo "<option value=".$registro['id'].">".$registro['nombre']."</option>";
