@@ -193,7 +193,7 @@ $faculty = $_REQUEST['form_faculty'];
               <?php
                 $temp = $_GET["form_university"];
                 echo "<h1>".$temp."</h1>";
-                foreach ( $db->query ("SELECT id, nombre FROM $tablaFacultad WHERE idUniversidad=$temp") as $registro) {
+                foreach ( $db->query ("SELECT id, nombre FROM $tablaFacultad WHERE idUniversidad=1") as $registro) {
                     
                   echo "<option value=".$registro['id'].">".$registro['nombre']."</option>";
 
