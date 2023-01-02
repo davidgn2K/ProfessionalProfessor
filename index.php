@@ -85,13 +85,7 @@ $faculty = $_REQUEST['form_faculty'];
       <div>
         Operación Exitosa. La información ha sido insertada en la base de datos.
       </div>
-    </div> 
-
-    <script>
-      setTimeout(function() {
-        window.location.reload();
-    }, 2500); 
-  </script>';
+    </div>';
 
   } else{
       echo '<div class="alert alert-danger d-flex align-items-center" role="alert">
@@ -99,12 +93,7 @@ $faculty = $_REQUEST['form_faculty'];
       <div>
         Error. La información no ha podido ser insertada en la base de datos. Intente de nuevo.
       </div>
-    </div>
-    <script>
-      setTimeout(function() {
-        window.location.reload();
-      }, 2500); 
-    </script>';
+    </div>';
   }
    
   // Close connection
