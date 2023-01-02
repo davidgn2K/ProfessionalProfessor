@@ -11,6 +11,13 @@ $database = "professionalProfessor";
         // database name => professionalProfessor
 $conn = mysqli_connect($host, $user, "12345", $database);
 
+try{
+	$db = new PDO("mysql:host=localhost;dbname=$database", $user, $password);
+} catch (PDOException $e) {
+	echo "<h1>Error: ". $e->getMessage() ." </h1>";
+	die();
+}
+
 // Check connection
 if($conn === false){
   die("ERROR: Could not connect. "
@@ -155,16 +162,16 @@ $faculty = $_REQUEST['form_faculty'];
 
           <div class="col-md-3 mb-3">
             <label for="validationDefault01">Nombre</label>
-            <input type="text" class="form-control" id="validationDefault01" placeholder="Alberto" value="" name="form_name" required>
+            <input type="text" class="form-control" id="validationDefault01" placeholder="Alberto" name="form_name" required>
           </div>
 
           <div class="col-md-3 mb-3">
             <label for="validationDefault02">Apellido Paterno</label>
-            <input type="text" class="form-control" id="validationDefault02" placeholder="Arenas" value="" name="form_lname" required>
+            <input type="text" class="form-control" id="validationDefault02" placeholder="Arenas" name="form_lname" required>
           </div>
           <div class="col-md-3 mb-3">
             <label for="validationDefault03">Apellido Materno</label>
-            <input type="text" class="form-control" id="validationDefault03" placeholder="Islas" name="form_mname" value="">
+            <input type="text" class="form-control" id="validationDefault03" placeholder="Islas" name="form_mname">
           </div>
         </div>
         <div class="form-row">
@@ -177,15 +184,19 @@ $faculty = $_REQUEST['form_faculty'];
             <select class="custom-select mr-sm-2" id="inlineFormCustomSelect02" name="form_university">
               <option value="1" selected>Universidad Nacional Autónoma de México</option>
               <option value="2">Instituto Tecnológico de Estudios Superiores de Monterrey</option>
-              <option value="3">Instituto Tecnológico Autónomo de México</option>
             </select>
           </div>
           <div class="col-md-4 mb-3">
             <label class="mr-sm-2" for="inlineFormCustomSelect03">Facultad</label>
             <select class="custom-select mr-sm-2" id="inlineFormCustomSelect03" name="form_faculty">
-              <option value="1" selected>Op1</option>
-              <option value="2">Op2</option>
-              <option value="3">Op3</option>
+              <?php
+                foreach ($db->query("SELECT id, nombre FROM facultad 
+                                    WHERE idUniversidad=$university") as $registro) {
+                    
+                  echo "<option value=".$registro['id'].">".$registro['nombre']."</option>";
+
+                }  
+              ?>
             </select>
           </div>
         </div>
