@@ -95,7 +95,7 @@ try{
         <?php 
             foreach ($db->query("SELECT * FROM $tableProfesor") as $registro) {
 
-                $temp = q$registro['id'];
+                $temp = $registro['id'];
 
           echo "<tr>";
             echo "<th scope='row'>".$registro['id']."</th>";
