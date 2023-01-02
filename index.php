@@ -183,8 +183,8 @@ $faculty = $_REQUEST['form_faculty'];
           <div class="col-md-5 mb-3">
             <label class="mr-sm-2" for="inlineFormCustomSelect02">Universidad</label>
             <select class="custom-select mr-sm-2" id="inlineFormCustomSelect02" name="form_university">
-              <option value="1" selected>Universidad Nacional Autónoma de México</option>
-              <option value="2">Instituto Tecnológico de Estudios Superiores de Monterrey</option>
+              <option value=1 selected>Universidad Nacional Autónoma de México</option>
+              <option value=2>Instituto Tecnológico de Estudios Superiores de Monterrey</option>
             </select>
           </div>
           <div class="col-md-4 mb-3">
