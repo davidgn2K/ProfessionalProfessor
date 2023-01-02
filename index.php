@@ -192,7 +192,7 @@ $faculty = $_REQUEST['form_faculty'];
             <select class="custom-select mr-sm-2" id="inlineFormCustomSelect03" name="form_faculty">
               <?php
                 foreach ( $db->query ("SELECT id, nombre FROM $tablaFacultad 
-                                    WHERE idUniversidad=$university") as $registro) {
+                                  ") as $registro) {
                     
                   echo "<option value=".$registro['id'].">".$registro['nombre']."</option>";
 
