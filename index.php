@@ -76,7 +76,7 @@ $faculty = $_REQUEST['form_faculty'];
   </svg>
   
   <?php
-  if (isset($_POST['action'])) {
+  if (isset($_GET['submitButton'])) {
     $sql = "INSERT INTO profesor (nombre, cedulaProfesional, grado, paterno, materno) VALUES($name, $license, $degree, $lname, $mname)" ;
     if(mysqli_query($conn, $sql)){
 
@@ -87,10 +87,11 @@ $faculty = $_REQUEST['form_faculty'];
       </div>
     </div> 
 
-    
-    setTimeout(function() {
-      window.location.reload();
-  }, 2500);';
+    <script>
+      setTimeout(function() {
+        window.location.reload();
+    }, 2500); 
+  </script>';
 
   } else{
       echo '<div class="alert alert-danger d-flex align-items-center" role="alert">
@@ -99,10 +100,11 @@ $faculty = $_REQUEST['form_faculty'];
         Error. La información no ha podido ser insertada en la base de datos. Intente de nuevo.
       </div>
     </div>
-
-    setTimeout(function() {
-      window.location.reload();
-    }, 2500)';
+    <script>
+      setTimeout(function() {
+        window.location.reload();
+      }, 2500); 
+    </script>';
   }
    
   // Close connection
@@ -148,7 +150,7 @@ $faculty = $_REQUEST['form_faculty'];
         </div>  
       </div> 
 
-      <form action="" class="mx-3 my-5" method="get">
+      <form action="http://192.168.100.35" class="mx-3 my-5" method="GET">
         <div class="form-row">
 
           <div class="col-md-3 mb-3">
