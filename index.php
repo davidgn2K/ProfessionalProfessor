@@ -13,13 +13,13 @@ try{
 	die();
 }
 
-$degree =  $_REQUEST['form_degree'];
-$name = $_REQUEST['form_name'];
-$lname =  $_REQUEST['form_lname'];
-$mname = $_REQUEST['form_mname'];
-$license = $_REQUEST['form_license'];
-$university = $_REQUEST['form_university'];
-$faculty = $_REQUEST['form_faculty'];
+$degree =  $_GET['form_degree'];
+$name = $_GET['form_name'];
+$lname =  $_GET['form_lname'];
+$mname = $_GET['form_mname'];
+$license = $_GET['form_license'];
+$university = $_GET['form_university'];
+$faculty = $_GET['form_faculty'];
 ?>
 
 <!DOCTYPE html>
@@ -57,11 +57,9 @@ $faculty = $_REQUEST['form_faculty'];
   <body>
   
   <?php
-  if (isset($_REQUEST['submitButton'])) {
+  if (isset($_GET['submitButton'])) {
 
-    $formSubmition = $db->query("INSERT INTO profesor (nombre, cedulaProfesional, grado, paterno, materno) VALUES($name, $license, $degree, $lname, $mname)");
-
-    if(TRUE){
+    if( $db->query("INSERT INTO profesor (nombre, cedulaProfesional, grado, paterno, materno) VALUES($name, $license, $degree, $lname, $mname)") == false){
 
       echo '<div class="alert alert-danger alert-dismissible fade show" role="alert">
       <strong>Error.</strong> Los datos no han podido ser registrados.
@@ -120,7 +118,7 @@ $faculty = $_REQUEST['form_faculty'];
         </div>  
       </div> 
 
-      <form action="" class="mx-3 my-5" method="get">
+      <form action="http://192.168.100.35" class="mx-3 my-5" method="GET">
         <div class="form-row">
 
           <div class="col-md-3 mb-3">
