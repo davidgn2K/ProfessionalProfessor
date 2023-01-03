@@ -57,11 +57,11 @@ $faculty = $_REQUEST['form_faculty'];
   <body>
   
   <?php
-  if (isset($_GET['submitButton'])) {
+  if (isset($_REQUEST['submitButton'])) {
 
     $formSubmition = $db->query("INSERT INTO profesor (nombre, cedulaProfesional, grado, paterno, materno) VALUES($name, $license, $degree, $lname, $mname)");
 
-    if($formSubmition == false){
+    if(TRUE){
 
       echo '<div class="alert alert-danger alert-dismissible fade show" role="alert">
       <strong>Error.</strong> Los datos no han podido ser registrados.
