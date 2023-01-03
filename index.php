@@ -6,23 +6,11 @@ $password = "12345";
 $database = "professionalProfessor";
 $tablaFacultad = "facultad";
 
- // servername => localhost
-        // username => root
-        // password => 12345
-        // database name => professionalProfessor
-$conn = mysqli_connect($host, $user, "12345", $database);
-
 try{
 	$db = new PDO("mysql:host=localhost;dbname=$database", $user, $password);
 } catch (PDOException $e) {
 	echo "<h1>Error: ". $e->getMessage() ." </h1>";
 	die();
-}
-
-// Check connection
-if($conn === false){
-  die("ERROR: Could not connect. "
-      . mysqli_connect_error());
 }
 
 $degree =  $_POST['form_degree'];
@@ -70,25 +58,20 @@ $faculty = $_POST['form_faculty'];
   
   <?php
   if (isset($_POST['submitButton'])) {
-    echo '<div class="alert alert-warning alert-dismissible fade show" role="alert">
-      <strong>Error.</strong> Los datos no han podido ser registrados.
-      <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-        <span aria-hidden="true">&times;</span>
-      </button>
-    </div>';
-    $sql = "INSERT INTO profesor (nombre, cedulaProfesional, grado, paterno, materno) VALUES($name, $license, $degree, $lname, $mname)" ;
-    if(mysqli_query($conn, $sql)){
 
-      echo '<div class="alert alert-success alert-dismissible fade show" role="alert">
-      <strong>Éxito.</strong> Datos registrados.
+    $formSubmition = $db->query("INSERT INTO profesor (nombre, cedulaProfesional, grado, paterno, materno) VALUES($name, $license, $degree, $lname, $mname)");
+    if($formSubmition == false){
+
+      echo '<div class="alert alert-danger alert-dismissible fade show" role="alert">
+      <strong>Error.</strong> Los datos no han podido ser registrados.
       <button type="button" class="close" data-dismiss="alert" aria-label="Close">
         <span aria-hidden="true">&times;</span>
       </button>
     </div>';
 
   } else{
-      echo '<div class="alert alert-danger alert-dismissible fade show" role="alert">
-      <strong>Error.</strong> Los datos no han podido ser registrados.
+    echo '<div class="alert alert-success alert-dismissible fade show" role="alert">
+      <strong>Éxito.</strong> Datos registrados.
       <button type="button" class="close" data-dismiss="alert" aria-label="Close">
         <span aria-hidden="true">&times;</span>
       </button>
