@@ -13,13 +13,13 @@ try{
 	die();
 }
 
-$degree =  $_GET['form_degree'];
-$name = $_GET['form_name'];
-$lname =  $_GET['form_lname'];
-$mname = $_GET['form_mname'];
-$license = (int)$_GET['form_license'];
-$university = $_GET['form_university'];
-$faculty = $_GET['form_faculty'];
+$degree =  $_POST['form_degree'];
+$name = $_POST['form_name'];
+$lname =  $_POST['form_lname'];
+$mname = $_POST['form_mname'];
+$license = (int)$_POST['form_license'];
+$university = $_POST['form_university'];
+$faculty = $_POST['form_faculty'];
 ?>
 
 <!DOCTYPE html>
@@ -57,7 +57,7 @@ $faculty = $_GET['form_faculty'];
   <body>
   
   <?php
-  if (isset($_GET['submitButton'])) {
+  if (isset($_POST['submitButton'])) {
 
     if( $db->query("INSERT INTO profesor (nombre, cedulaProfesional, grado, paterno, materno) VALUES($name, $license, $degree, $lname, $mname)") == false){
 
@@ -118,7 +118,7 @@ $faculty = $_GET['form_faculty'];
         </div>  
       </div> 
 
-      <form action="" class="mx-3 my-5" method="GET">
+      <form action="" class="mx-3 my-5" method="post">
         <div class="form-row">
 
           <div class="col-md-3 mb-3">
