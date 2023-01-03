@@ -12,14 +12,6 @@ try{
 	echo "<h1>Error: ". $e->getMessage() ." </h1>";
 	die();
 }
-
-$degree =  $_POST['form_degree'];
-$name = $_POST['form_name'];
-$lname =  $_POST['form_lname'];
-$mname = $_POST['form_mname'];
-$license = (int)$_POST['form_license'];
-$university = $_POST['form_university'];
-$faculty = $_POST['form_faculty'];
 ?>
 
 <!DOCTYPE html>
@@ -58,6 +50,13 @@ $faculty = $_POST['form_faculty'];
   
   <?php
   if (isset($_POST['submitButton'])) {
+    $degree =  $_POST['form_degree'];
+    $name = $_POST['form_name'];
+    $lname =  $_POST['form_lname'];
+    $mname = $_POST['form_mname'];
+    $license = (int)$_POST['form_license'];
+    $university = $_POST['form_university'];
+    $faculty = $_POST['form_faculty'];
 
     if( $db->query("INSERT INTO profesor (nombre, cedulaProfesional, grado, paterno, materno) VALUES($name, $license, $degree, $lname, $mname)") == false){
 
