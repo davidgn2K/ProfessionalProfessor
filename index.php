@@ -8,7 +8,6 @@ $tablaFacultad = "facultad";
 
 try{
 	$db = new PDO("mysql:host=localhost;dbname=$database", $user, $password);
-  $db->query("INSERT INTO profesor (nombre, cedulaProfesional, grado, paterno, materno) VALUES('Roberto', 123, 'doctor', 'a', 'b')");
 } catch (PDOException $e) {
 	echo "<h1>Error: ". $e->getMessage() ." </h1>";
 	die();
@@ -51,31 +50,32 @@ try{
   
   <?php
   if (isset($_POST['submitButton'])) {
-    $degree =  $_POST['form_degree'];
-    $name = $_POST['form_name'];
-    $lname =  $_POST['form_lname'];
-    $mname = $_POST['form_mname'];
-    $license = (int)$_POST['form_license'];
-    $university = $_POST['form_university'];
-    $faculty = $_POST['form_faculty'];
+    $db->query("INSERT INTO profesor (nombre, cedulaProfesional, grado, paterno, materno) VALUES('Roberto', 123, 'doctor', 'a', 'b')");
+  //   $degree =  $_POST['form_degree'];
+  //   $name = $_POST['form_name'];
+  //   $lname =  $_POST['form_lname'];
+  //   $mname = $_POST['form_mname'];
+  //   $license = (int)$_POST['form_license'];
+  //   $university = $_POST['form_university'];
+  //   $faculty = $_POST['form_faculty'];
 
-    if( $db->query("INSERT INTO profesor (nombre, cedulaProfesional, grado, paterno, materno) VALUES($name, $license, $degree, $lname, $mname)") == false){
+  //   if( $db->query("INSERT INTO profesor (nombre, cedulaProfesional, grado, paterno, materno) VALUES($name, $license, $degree, $lname, $mname)") == false){
 
-      echo '<div class="alert alert-danger alert-dismissible fade show" role="alert">
-      <strong>Error.</strong> Los datos no han podido ser registrados.
-      <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-        <span aria-hidden="true">&times;</span>
-      </button>
-    </div>';
+  //     echo '<div class="alert alert-danger alert-dismissible fade show" role="alert">
+  //     <strong>Error.</strong> Los datos no han podido ser registrados.
+  //     <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+  //       <span aria-hidden="true">&times;</span>
+  //     </button>
+  //   </div>';
 
-  } else{
-    echo '<div class="alert alert-success alert-dismissible fade show" role="alert">
-      <strong>Éxito.</strong> Datos registrados.
-      <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-        <span aria-hidden="true">&times;</span>
-      </button>
-    </div>';
-  }
+  // } else{
+  //   echo '<div class="alert alert-success alert-dismissible fade show" role="alert">
+  //     <strong>Éxito.</strong> Datos registrados.
+  //     <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+  //       <span aria-hidden="true">&times;</span>
+  //     </button>
+  //   </div>';
+  // }
    
 }
         ?>
