@@ -124,10 +124,10 @@ $faculty = $_GET['form_faculty'];
           <div class="col-md-3 mb-3">
             <label class="mr-sm-2" for="inlineFormCustomSelect01">Grado</label>
             <select class="custom-select mr-sm-2" id="inlineFormCustomSelect01" name="form_degree">
-              <option value="1" selected>Licenciado</option>
-              <option value="2">Maestro</option>
-              <option value="3">Doctor</option>
-              <option value="4">M.I.</option>
+              <option value="Licenciado" selected>Licenciado</option>
+              <option value="Maestro">Maestro</option>
+              <option value="Doctor">Doctor</option>
+              <option value="M.I.">M.I.</option>
             </select>
           </div>
 
