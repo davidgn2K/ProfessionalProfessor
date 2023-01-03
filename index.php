@@ -25,13 +25,13 @@ if($conn === false){
       . mysqli_connect_error());
 }
 
-$degree =  $_REQUEST['form_degree'];
-$name = $_REQUEST['form_name'];
-$lname =  $_REQUEST['form_lname'];
-$mname = $_REQUEST['form_mname'];
-$license = $_REQUEST['form_license'];
-$university = $_REQUEST['form_university'];
-$faculty = $_REQUEST['form_faculty'];
+$degree =  $_POST['form_degree'];
+$name = $_POST['form_name'];
+$lname =  $_POST['form_lname'];
+$mname = $_POST['form_mname'];
+$license = $_POST['form_license'];
+$university = $_POST['form_university'];
+$faculty = $_POST['form_faculty'];
 ?>
 
 <!DOCTYPE html>
