@@ -57,10 +57,10 @@ $faculty = $_REQUEST['form_faculty'];
   <body>
   
   <?php
-  if (isset($_POST['submitButton'])) {
+  if (isset($_GET['submitButton'])) {
 
     $formSubmition = $db->query("INSERT INTO profesor (nombre, cedulaProfesional, grado, paterno, materno) VALUES($name, $license, $degree, $lname, $mname)");
-    
+
     if($formSubmition == false){
 
       echo '<div class="alert alert-danger alert-dismissible fade show" role="alert">
@@ -120,7 +120,7 @@ $faculty = $_REQUEST['form_faculty'];
         </div>  
       </div> 
 
-      <form action="" class="mx-3 my-5" method="post">
+      <form action="" class="mx-3 my-5" method="get">
         <div class="form-row">
 
           <div class="col-md-3 mb-3">
