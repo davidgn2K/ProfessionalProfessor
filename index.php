@@ -60,7 +60,7 @@ try{
     $faculty = $_POST["form_faculty"];
    
     echo '<div class="alert alert-warning alert-dismissible fade show" role="alert">
-    Degree: '.$degree.', name: '.$name.', lname: '.$lname.', mname: '.$mname.', license: '.$license.'
+    Degree: '.gettype($degree).', name: '.gettype($name).', lname: '.$lname.', mname: '.$mname.', license: '.gettype($license).'
     <button type="button" class="close" data-dismiss="alert" aria-label="Close">
       <span aria-hidden="true">&times;</span>
     </button>
