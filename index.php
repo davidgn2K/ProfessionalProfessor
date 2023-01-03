@@ -17,7 +17,7 @@ $degree =  $_GET['form_degree'];
 $name = $_GET['form_name'];
 $lname =  $_GET['form_lname'];
 $mname = $_GET['form_mname'];
-$license = $_GET['form_license'];
+$license = (int)$_GET['form_license'];
 $university = $_GET['form_university'];
 $faculty = $_GET['form_faculty'];
 ?>
