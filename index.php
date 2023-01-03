@@ -59,12 +59,7 @@ try{
     $university = $_POST["form_university"];
     $faculty = $_POST["form_faculty"];
    
-    echo '<div class="alert alert-warning alert-dismissible fade show" role="alert">
-    Degree: '.gettype($degree).', name: '.gettype($name).', lname: '.$lname.', mname: '.$mname.', license: '.gettype($license).'
-    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-      <span aria-hidden="true">&times;</span>
-    </button>
-  </div>';
+    $db -> query("INSERT INTO profesor (grado, nombre, parterno, materno, cedulaProfesional) VALUES ($degree, $name, $lname, $mname, $license)");
 }
         ?>
         
