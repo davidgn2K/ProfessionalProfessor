@@ -60,6 +60,7 @@ $faculty = $_REQUEST['form_faculty'];
   if (isset($_POST['submitButton'])) {
 
     $formSubmition = $db->query("INSERT INTO profesor (nombre, cedulaProfesional, grado, paterno, materno) VALUES($name, $license, $degree, $lname, $mname)");
+    
     if($formSubmition == false){
 
       echo '<div class="alert alert-danger alert-dismissible fade show" role="alert">
