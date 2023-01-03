@@ -70,6 +70,12 @@ $faculty = $_REQUEST['form_faculty'];
   
   <?php
   if (isset($_POST['submitButton'])) {
+    echo '<div class="alert alert-warning alert-dismissible fade show" role="alert">
+      <strong>Error.</strong> Los datos no han podido ser registrados.
+      <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>';
     $sql = "INSERT INTO profesor (nombre, cedulaProfesional, grado, paterno, materno) VALUES($name, $license, $degree, $lname, $mname)" ;
     if(mysqli_query($conn, $sql)){
 
