@@ -168,7 +168,7 @@ $faculty = $_POST['form_faculty'];
         <div class="form-row">
           <div class="col-md-3 mb-3">
             <label for="validationDefault04">Cédula Profesional</label>
-            <input type="text" class="form-control" id="validationDefault04" placeholder="23456789" name="form_license" required>
+            <input type="number" class="form-control" id="validationDefault04" placeholder="23456789" name="form_license" required>
           </div>
           <div class="col-md-5 mb-3">
             <label class="mr-sm-2" for="inlineFormCustomSelect02">Universidad</label>
