@@ -169,6 +169,13 @@ try{
             <label for="validationDefault04">Cédula Profesional</label>
             <input type="number" class="form-control" id="validationDefault04" placeholder="23456789" name="form_license" required>
           </div>
+          <!-- <div class="col-md-5 mb-3">
+            <label class="mr-sm-2" for="inlineFormCustomSelect02">Universidad</label>
+            <select class="custom-select mr-sm-2" id="inlineFormCustomSelect02" name="form_university">
+              <option value=1 selected>Universidad Nacional Autónoma de México</option>
+              <option value=2>Instituto Tecnológico de Estudios Superiores de Monterrey</option>
+            </select>
+          </div> -->
           <div class="col-md-4 mb-3">
             <label class="mr-sm-2" for="inlineFormCustomSelect03">Facultad</label>
             <select class="custom-select mr-sm-2" id="inlineFormCustomSelect03" name="form_faculty">
