@@ -118,7 +118,7 @@ $faculty = $_GET['form_faculty'];
         </div>  
       </div> 
 
-      <form action="http://192.168.100.35" class="mx-3 my-5" method="GET">
+      <form action="" class="mx-3 my-5" method="GET">
         <div class="form-row">
 
           <div class="col-md-3 mb-3">
