@@ -69,7 +69,7 @@ $faculty = $_REQUEST['form_faculty'];
   <body>
   
   <?php
-  if (isset($_GET['submitButton'])) {
+  if (isset($_POST['submitButton'])) {
     $sql = "INSERT INTO profesor (nombre, cedulaProfesional, grado, paterno, materno) VALUES($name, $license, $degree, $lname, $mname)" ;
     if(mysqli_query($conn, $sql)){
 
@@ -132,7 +132,7 @@ $faculty = $_REQUEST['form_faculty'];
         </div>  
       </div> 
 
-      <form action="" class="mx-3 my-5" method="GET">
+      <form action="" class="mx-3 my-5" method="post">
         <div class="form-row">
 
           <div class="col-md-3 mb-3">
@@ -188,7 +188,7 @@ $faculty = $_REQUEST['form_faculty'];
           <div class="col-md-3">
           </div>
           <div class="col-md-6 mt-5">
-            <button class="button-27" type="submit" name="submitButton">Confirmar&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<i class="fas fa-chevron-right"></i> </button>
+            <button class="button-27" type="submit" name="submitButton" value="confirmed">Confirmar&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<i class="fas fa-chevron-right"></i> </button>
           </div>
           <div class="col-md-3">
           </div>
