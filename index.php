@@ -73,40 +73,16 @@ $faculty = $_REQUEST['form_faculty'];
     $sql = "INSERT INTO profesor (nombre, cedulaProfesional, grado, paterno, materno) VALUES($name, $license, $degree, $lname, $mname)" ;
     if(mysqli_query($conn, $sql)){
 
-      echo '<div class="alert alert-success d-flex align-items-center alert-dismissible fade show" role="alert">
-      <svg class="bi flex-shrink-0 me-2" role="img" aria-label="Success:"><use xlink:href="#check-circle-fill"/></svg>
-      <div>
-        Operación Exitosa. La información ha sido insertada en la base de datos.
-      </div>
+      echo '<div class="alert alert-success alert-dismissible fade show" role="alert">
+      <strong>Éxito.</strong> Datos registrados.
       <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
     </div>';
 
   } else{
-      echo '<!--begin::Alert-->
-      <div class="alert alert-dismissible bg-warning d-flex flex-column flex-sm-row p-5 mb-10">
-          <!--begin::Icon-->
-          <span class="svg-icon svg-icon-2hx svg-icon-light me-4 mb-5 mb-sm-0">...</span>
-          <!--end::Icon-->
-      
-          <!--begin::Wrapper-->
-          <div class="d-flex flex-column text-light pe-0 pe-sm-10">
-              <!--begin::Title-->
-              <h4 class="mb-2 light">Error</h4>
-              <!--end::Title-->
-      
-              <!--begin::Content-->
-              <span>La información no pudo ser insertada.</span>
-              <!--end::Content-->
-          </div>
-          <!--end::Wrapper-->
-      
-          <!--begin::Close-->
-          <button type="button" class="position-absolute position-sm-relative m-2 m-sm-0 top-0 end-0 btn btn-icon ms-sm-auto" data-bs-dismiss="alert">
-              <span class="svg-icon svg-icon-2x svg-icon-light">...</span>
-          </button>
-          <!--end::Close-->
-      </div>
-      <!--end::Alert-->';
+      echo '<div class="alert alert-danger alert-dismissible fade show" role="alert">
+      <strong>Error.</strong> Los datos no pudieron ser registrados.
+      <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>';
   }
    
   // Close connection
