@@ -78,9 +78,7 @@ $faculty = $_POST['form_faculty'];
     </div>';
   }
    
-  // Close connection
-  mysqli_close($conn);
-  }
+}
         ?>
         
       <!-- Navbar start -->
