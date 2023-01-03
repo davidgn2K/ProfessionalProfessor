@@ -99,7 +99,7 @@ try{
 
           echo "<tr>";
             echo "<th scope='row'>".$registro['id']."</th>";
-            echo "<td>".$registro['nombre']."</td>";
+            echo "<td>".$registro['grado']."&nbsp;".$registro['nombre']."&nbsp;".$registro['paterno']."&nbsp;".$registro['materno']."</td>";
             echo "<td>";
                 echo "<ul>";
                     foreach ( $db->query ("SELECT idProfesor, $tableUniversidad.nombre, $tableFacultad.nombre as col
