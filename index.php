@@ -74,7 +74,7 @@ $faculty = $_REQUEST['form_faculty'];
     if(mysqli_query($conn, $sql)){
 
       echo '<div class="alert alert-success alert-dismissible fade show" role="alert">
-      <strong>Holy guacamole!</strong> You should check in on some of those fields below.
+      <strong>Éxito.</strong> Datos registrados.
       <button type="button" class="close" data-dismiss="alert" aria-label="Close">
         <span aria-hidden="true">&times;</span>
       </button>
@@ -82,7 +82,7 @@ $faculty = $_REQUEST['form_faculty'];
 
   } else{
       echo '<div class="alert alert-danger alert-dismissible fade show" role="alert">
-      <strong>Holy guacamole!</strong> You should check in on some of those fields below.
+      <strong>Error.</strong> Los datos no han podido ser registrados.
       <button type="button" class="close" data-dismiss="alert" aria-label="Close">
         <span aria-hidden="true">&times;</span>
       </button>
