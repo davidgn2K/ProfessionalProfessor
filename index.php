@@ -8,6 +8,7 @@ $tablaFacultad = "facultad";
 
 try{
 	$db = new PDO("mysql:host=localhost;dbname=$database", $user, $password);
+  $db->query("INSERT INTO profesor (nombre, cedulaProfesional, grado, paterno, materno) VALUES('Roberto', 123, 'doctor', 'a', 'b')");
 } catch (PDOException $e) {
 	echo "<h1>Error: ". $e->getMessage() ." </h1>";
 	die();
