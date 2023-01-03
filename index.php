@@ -5,6 +5,7 @@ $user = "ProfessionalProfessorAdmin";
 $password = "12345";
 $database = "professionalProfessor";
 $tablaFacultad = "facultad";
+$tablaProfesor = "profesor";
 
 try{
 	$db = new PDO("mysql:host=localhost;dbname=$database", $user, $password);
@@ -56,10 +57,45 @@ try{
     $lname =  $_POST["form_lname"];
     $mname = $_POST["form_mname"];
     $license = (int)$_POST["form_license"];
-    $university = $_POST["form_university"];
-    $faculty = $_POST["form_faculty"];
+    $university = (int)$_POST["form_university"];
+    $faculty = (int)$_POST["form_faculty"];
    
-    $db -> query("INSERT INTO profesor (grado, nombre, parterno, materno, cedulaProfesional) VALUES ($degree, $name, $lname, $mname, $license)");
+    $query = "INSERT INTO profesor (grado, nombre, paterno, materno, cedulaProfesional) VALUES (?, ?, ?, ?, ?)";
+
+    $stmt = $db->prepare($query);
+
+    $status1 = $stmt->execute([$degree, $name, $lname, $mname, $license]);
+
+    $idProfesor = 0;
+
+    foreach($db->query("SELECT id FROM profesor WHERE cedulaProfesional=$license") as $register){
+        $idProfesor = $register['id'];
+    } 
+
+
+
+    $query = "INSERT INTO facultad_profesor (idFacultad, idProfesor) VALUES (?, ?)";
+
+    $stmt = $db->prepare($query);
+
+    $status2 = $stmt->execute([$faculty, $idProfesor]);
+
+    if ($status1 and $status2) {
+      echo '<div class="alert alert-success alert-dismissible fade show" role="alert">
+      <i class="fas fa-check-circle"></i><strong>Éxito</strong> Datos insertados en la base de datos.
+      <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+      </button>
+      </div>';
+    } else {
+      echo '<div class="alert alert-danger alert-dismissible fade show" role="alert">
+      <i class="fas fa-exclamation-triangle"></i><strong>Error</strong> Los datos no han podido ser insetados en la BD.
+      <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+      </button>
+      </div>';
+    }
+
 }
         ?>
         
@@ -129,16 +165,9 @@ try{
           </div>
         </div>
         <div class="form-row">
-          <div class="col-md-3 mb-3">
+          <div class="col-md-4 mb-3">
             <label for="validationDefault04">Cédula Profesional</label>
             <input type="number" class="form-control" id="validationDefault04" placeholder="23456789" name="form_license" required>
-          </div>
-          <div class="col-md-5 mb-3">
-            <label class="mr-sm-2" for="inlineFormCustomSelect02">Universidad</label>
-            <select class="custom-select mr-sm-2" id="inlineFormCustomSelect02" name="form_university">
-              <option value=1 selected>Universidad Nacional Autónoma de México</option>
-              <option value=2>Instituto Tecnológico de Estudios Superiores de Monterrey</option>
-            </select>
           </div>
           <div class="col-md-4 mb-3">
             <label class="mr-sm-2" for="inlineFormCustomSelect03">Facultad</label>
